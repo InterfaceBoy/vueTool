@@ -1,0 +1,20 @@
+{
+  "name": "heyp",
+  "short_name": "heyp",
+  "icons": [
+    {
+      "src": "./img/icons/heyp.jpeg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icons/heyp.jpeg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#4DBA87"
+}
