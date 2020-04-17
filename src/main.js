@@ -2,7 +2,7 @@
  * @Author: 何元鹏
  * @Date: 2019-09-04 15:21:35
  * @LastEditors: 何元鹏
- * @LastEditTime: 2020-03-23 22:51:18
+ * @LastEditTime: 2020-04-17 11:36:39
  * @Description: file content
  */
 import Vue from "vue";
@@ -50,5 +50,5 @@ Vue.config.errorHandler = function(err, vm, info) {
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");
