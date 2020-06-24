@@ -2,7 +2,7 @@
  * @Author: 何元鹏
  * @Date: 2019-09-16 16:56:41
  * @LastEditors: 何元鹏
- * @LastEditTime: 2020-03-30 09:55:56
+ * @LastEditTime: 2020-06-23 17:10:21
  * @Description: file content
  -->
 <template>
@@ -16,6 +16,9 @@
       </li>
       <li>
         <router-link to="/liQuorTree">liQuorTree</router-link>
+      </li>
+      <li>
+        <router-link to="/observable">observable</router-link>
       </li>
     </ul>
     <router-view class="right-content" />
