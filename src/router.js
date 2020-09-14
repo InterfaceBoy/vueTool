@@ -2,7 +2,7 @@
  * @Author: 何元鹏
  * @Date: 2019-09-04 13:51:08
  * @LastEditors: 何元鹏
- * @LastEditTime: 2020-09-14 11:37:03
+ * @LastEditTime: 2020-09-14 14:36:19
  * @Description: file content
  */
 import Vue from "vue";
@@ -107,6 +107,14 @@ export default new Router({
           component: () =>
             import(
               /* webpackChunkName: "about" */ "./views/Attempt/SummaryVue/Observable/observable.vue"
+            ),
+        },
+        {
+          path: "/testTable",
+          name: "testTable",
+          component: () =>
+            import(
+              /* webpackChunkName: "about" */ "./views/Attempt/SummaryVue/TestTable/testTable.vue"
             ),
         },
       ],
