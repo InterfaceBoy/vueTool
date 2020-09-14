@@ -2,25 +2,29 @@
  * @Author: 何元鹏
  * @Date: 2019-10-22 14:43:34
  * @LastEditors: 何元鹏
- * @LastEditTime: 2020-04-16 15:59:51
+ * @LastEditTime: 2020-09-14 14:32:38
  * @Description: file content
  -->
 <template>
   <div class="html-list">
     <div class="list-tag">
-      <Menu mode="vertical" theme="light" active-name="5">
+      <Menu
+        mode="vertical"
+        theme="light"
+        active-name="5"
+      >
         <MenuItem name="1">
           <p @click="handleTag(1)">投票功能</p>
         </MenuItem>
         <MenuItem name="2">
           <p @click="handleTag(2)">功能测试</p>
         </MenuItem>
-        <MenuItem name="3">
+        <!-- <MenuItem name="3">
           <p @click="handleTag(3)">上传pdf预览</p>
         </MenuItem>
         <MenuItem name="4">
           <p @click="handleTag(4)">远程pdf预览</p>
-        </MenuItem>
+        </MenuItem>-->
         <MenuItem name="5">
           <p @click="handleTag(5)">XML文件解析</p>
         </MenuItem>
@@ -44,8 +48,8 @@
 /*   组件 */
 import voting from "@/views/Attempt/SummaryHtml/components/voting.vue";
 import tool from "@/views/Attempt/SummaryHtml/components/tool.vue";
-import download from "@/views/Attempt/SummaryHtml/components/download.vue";
-import pdfDownload from "@/views/Attempt/SummaryHtml/components/pdfDownload.vue";
+// import download from "@/views/Attempt/SummaryHtml/components/download.vue";
+// import pdfDownload from "@/views/Attempt/SummaryHtml/components/pdfDownload.vue";
 import perviewXML from "@/views/Attempt/SummaryHtml/components/perviewXML.vue";
 import tableTerr from "@/views/Attempt/SummaryHtml/components/table.vue";
 export default {

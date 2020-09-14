@@ -1,8 +1,15 @@
 <template>
   <div>
-    <input type="file" ref="fielinput" @change="uploadFile" />
+    <input
+      type="file"
+      ref="fielinput"
+      @change="uploadFile"
+    />
     <div class="canvas-container">
-      <canvas ref="myCanvas" class="pdf-container"> </canvas>
+      <canvas
+        ref="myCanvas"
+        class="pdf-container"
+      ></canvas>
     </div>
   </div>
 </template>
