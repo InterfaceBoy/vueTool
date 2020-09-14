@@ -4,11 +4,20 @@
     <div>store中count：{{count}}</div>
     <button @click="changeName(name1)">父页面修改name</button>
     <div>store中name：{{name}}</div>
+
+    <div>
+      <input
+        name="fileInput"
+        type="file"
+        @change="handleFileChoose"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import { store, mutations } from "./store";
+import { postImportIndexValueBatch, postImportIndexLayerCode } from "@/api";
 export default {
   // 组件名称
   name: "demo",
@@ -43,6 +52,14 @@ export default {
     },
     changeName() {
       mutations.changeName(this.name1);
+    },
+    async handleFileChoose(e) {
+      const files = Array.from(e.target.files);
+      const formData = new FormData();
+      files.forEach(file => {
+        formData.append("files", file);
+      });
+      const uploadStatus = await postImportIndexLayerCode("1234", formData);
     }
   },
   // 以下是生命周期钩子   注：没用到的钩子请自行删除

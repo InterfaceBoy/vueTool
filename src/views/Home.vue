@@ -2,13 +2,12 @@
  * @Author: 何元鹏
  * @Date: 2019-09-04 13:51:08
  * @LastEditors: 何元鹏
- * @LastEditTime: 2020-03-30 09:51:23
+ * @LastEditTime: 2020-09-04 11:55:31
  * @Description: 首页
  -->
 <template>
   <div class="home">
     <div class="home-header">天行健，君子当自强不息</div>
-
     <div class="home-center">
       <div class="implement">
         <router-link to="/vue">GO</router-link>

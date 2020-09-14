@@ -1,7 +1,7 @@
 {
   "VERSION": "0.1.1 (2019-09-23 17:51)",
   "development": {
-    "API": "http://52.83.103.252:8086",
+    "API": "http://173.127.10.15:18080",
     "API_FILE_DIR": "/dgp-server-web-nr/",
     "MODEL_SYSTEM_LINK": "http://52.83.103.252:8075/dme/#/model-build"
   },
