@@ -2,7 +2,7 @@
  * @Author: 何元鹏
  * @Date: 2019-09-16 16:56:41
  * @LastEditors: 何元鹏
- * @LastEditTime: 2020-06-23 17:10:21
+ * @LastEditTime: 2020-09-14 11:37:51
  * @Description: file content
  -->
 <template>
@@ -19,6 +19,9 @@
       </li>
       <li>
         <router-link to="/observable">observable</router-link>
+      </li>
+      <li>
+        <router-link to="/testTable">testTable</router-link>
       </li>
     </ul>
     <router-view class="right-content" />
