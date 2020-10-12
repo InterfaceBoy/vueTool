@@ -2,7 +2,7 @@
  * @Author: 何元鹏
  * @Date: 2019-09-04 13:51:08
  * @LastEditors: 何元鹏
- * @LastEditTime: 2020-09-04 11:55:31
+ * @LastEditTime: 2020-09-17 19:23:03
  * @Description: 首页
  -->
 <template>
@@ -25,9 +25,18 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() {
+    window.addEventListener(
+      "message",
+      function(event) {
+        console.log(event.data);
+      },
+      false
+    );
+  },
   beforeDestroy() {},
-  methods: {}
+  methods: {},
+  updated() {}
 };
 </script>
 
