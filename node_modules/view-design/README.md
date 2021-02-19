@@ -31,27 +31,18 @@ ViewUI
 ## Features
 
 - Dozens of useful and beautiful components.
-- Friendly API. It's made for people with any skill level.
-- Extensive documentation and demos.
-- It is quite beautiful.
+- Friendly API. It's made for people with any skills level.
+- Extensive documentations and demos.
+- It is  quite awesome.
 - Supports both Vue.js 2 and Vue.js 1.
 
 ## Who's using ViewUI
 
-- [Alibaba 阿里巴巴](http://www.alibaba.com/)
-- [Baidu 百度](https://www.baidu.com/)
-- [Tencent 腾讯](https://www.tencent.com/)
-- [Toutiao 今日头条](https://www.toutiao.com/)
-- [JD 京东](http://www.jd.com/)
-- [DiDi 滴滴](http://www.didichuxing.com/)
-- [Meituan 美团](http://www.meituan.com/)
-- [Sina 新浪](http://www.sina.com.cn/)
-- [iFLYTEK 科大讯飞](http://www.iflytek.com/)
-- [LY 同程艺龙](https://www.ly.com/)
+![](https://file.iviewui.com/iview-design-dist/7fe5f4413704bbcb3ccc461ba92f6b50.jpg)
 
 ## Install
 
-We provide an [View UI plugin](https://github.com/iview-design/vue-cli-plugin-viewui) for Vue CLI 3, which you can use to quickly build an ViewUI-based project.
+We provide an [View UI plugin](https://github.com/view-design/vue-cli-plugin-viewui) for Vue CLI 3, which you can use to quickly build an ViewUI-based project.
 
 We also provide a starter kit [view-ui-project](https://github.com/iview-design/view-ui-project) for you.
 
@@ -106,7 +97,7 @@ import 'view-design/dist/styles/iview.css';
 
 ## Community
 
-If you want to contribute or have questions or bugs to report:
+If you want to contribute us or in case you are haiving any doubt.
 
 **Questions:** Find other users at the [Gitter chat](https://gitter.im/iview/iview) or post on [StackOverflow using `[iview-ui]` tag](https://stackoverflow.com/questions/tagged/iview-ui)  
 **Bugs:** [File a issue here](https://github.com/iview-design/iview/issues) - please provide a example so we can help you better  
@@ -117,7 +108,7 @@ If you want to contribute or have questions or bugs to report:
 |---|---|---|---|---|---|
 |[Aresn](https://github.com/icarusion) |  ![](https://avatars3.githubusercontent.com/u/5370542?v=3&s=60)  |[jingsam](https://github.com/jingsam) |  ![](https://avatars3.githubusercontent.com/u/1522494?v=3&s=60)  | [rijn](https://github.com/rijn)       |  ![](https://avatars2.githubusercontent.com/u/6976367?v=3&s=60)  |
 |[lcx960324](https://github.com/lcx960324)           |  ![](https://avatars3.githubusercontent.com/u/9768245?v=3&s=60)  |[GITleonine1989](https://github.com/GITleonine1989) |  ![](https://avatars1.githubusercontent.com/u/7582490?v=3&s=60)  |[huixisheng](https://github.com/huixisheng)         |  ![](https://avatars1.githubusercontent.com/u/1518967?v=3&s=60)  |
-|[Sergio Crisostomo](https://github.com/SergioCrisostomo)           |  ![](https://avatars3.githubusercontent.com/u/5614559?v=3&s=60)  |  [lison16](https://github.com/lison16)           |  ![](https://avatars3.githubusercontent.com/u/20942571?v=3&s=60) |  [Xotic750](https://github.com/Xotic750)    | ![](https://avatars3.githubusercontent.com/u/216041?v=3&s=60)   | 
+|[Sergio Crisostomo](https://github.com/SergioCrisostomo)           |  ![](https://avatars3.githubusercontent.com/u/5614559?v=3&s=60)  |  [lison16](https://github.com/lison16)           |  ![](https://avatars3.githubusercontent.com/u/20942571?v=3&s=60) |  [Xotic750](https://github.com/Xotic750)    | ![](https://avatars3.githubusercontent.com/u/216041?v=3&s=60)   |
 [huanghong1125](https://github.com/huanghong1125) | ![](https://avatars3.githubusercontent.com/u/12794817?v=3&s=60) | [yangdan8](https://github.com/yangdan8) | ![](https://avatars2.githubusercontent.com/u/16515026?v=3&s=60) |
 
 

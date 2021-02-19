@@ -8,8 +8,8 @@
             <span class="ivu-input-suffix" v-else-if="showSuffix"><slot name="suffix"><i class="ivu-icon" :class="['ivu-icon-' + suffix]" v-if="suffix"></i></slot></span>
             <span class="ivu-input-word-count" v-else-if="showWordLimit">{{ textLength }}/{{ upperLimit }}</span>
             <span class="ivu-input-suffix" v-else-if="password" @click="handleToggleShowPassword">
-                <i class="ivu-icon ivu-icon-ios-eye-off-outline" v-if="showPassword"></i>
-                <i class="ivu-icon ivu-icon-ios-eye-outline" v-else></i>
+                <i class="ivu-icon ivu-icon-ios-eye-outline" v-if="showPassword"></i>
+                <i class="ivu-icon ivu-icon-ios-eye-off-outline" v-else></i>
             </span>
             <transition name="fade">
                 <i class="ivu-icon ivu-icon-ios-loading ivu-load-loop" :class="[prefixCls + '-icon', prefixCls + '-icon-validate']" v-if="!icon"></i>
@@ -190,6 +190,11 @@
             password: {
                 type: Boolean,
                 default: false
+            },
+            // 4.5.0
+            border: {
+                type: Boolean,
+                default: true
             }
         },
         data () {
@@ -239,7 +244,8 @@
                         [`${prefixCls}-group-with-prepend`]: this.prepend,
                         [`${prefixCls}-group-with-append`]: this.append || (this.search && this.enterButton),
                         [`${prefixCls}-hide-icon`]: this.append,  // #554
-                        [`${prefixCls}-with-search`]: (this.search && this.enterButton)
+                        [`${prefixCls}-with-search`]: (this.search && this.enterButton),
+                        [`${prefixCls}-wrapper-disabled`]: this.itemDisabled // #685
                     }
                 ];
             },
@@ -249,6 +255,7 @@
                     {
                         [`${prefixCls}-${this.size}`]: !!this.size,
                         [`${prefixCls}-disabled`]: this.itemDisabled,
+                        [`${prefixCls}-no-border`]: !this.border,
                         [`${prefixCls}-with-prefix`]: this.showPrefix,
                         [`${prefixCls}-with-suffix`]: this.showSuffix || (this.search && this.enterButton === false)
                     }
@@ -258,7 +265,8 @@
                 return [
                     `${prefixCls}`,
                     {
-                        [`${prefixCls}-disabled`]: this.itemDisabled
+                        [`${prefixCls}-disabled`]: this.itemDisabled,
+                        [`${prefixCls}-no-border`]: !this.border
                     }
                 ];
             },
@@ -341,11 +349,24 @@
 
                 this.textareaStyles = calcTextareaHeight(this.$refs.textarea, minRows, maxRows);
             },
-            focus () {
-                if (this.type === 'textarea') {
-                    this.$refs.textarea.focus();
-                } else {
-                    this.$refs.input.focus();
+            focus (option) {
+                const $el = this.type === 'textarea' ? this.$refs.textarea : this.$refs.input;
+                $el.focus(option);
+                // Selection content
+                const { cursor } = option || {};
+                if (cursor) {
+                    const len = $el.value.length;
+
+                    switch (cursor) {
+                        case 'start':
+                            $el.setSelectionRange(0, 0);
+                            break;
+                        case 'end':
+                            $el.setSelectionRange(len, len);
+                            break;
+                        default:
+                            $el.setSelectionRange(0, len);
+                    }
                 }
             },
             blur () {

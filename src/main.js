@@ -2,7 +2,7 @@
  * @Author: 何元鹏
  * @Date: 2019-09-04 15:21:35
  * @LastEditors: 何元鹏
- * @LastEditTime: 2020-04-17 11:36:39
+ * @LastEditTime: 2020-11-06 15:30:34
  * @Description: file content
  */
 import Vue from "vue";
@@ -11,6 +11,7 @@ import router from "./router";
 import store from "./store";
 import iView from "view-design";
 import ElementUI from "element-ui";
+ 
 
 import x2js from "x2js"; // xml数据处理插件
 Vue.prototype.$x2js = new x2js(); // 创建x2js对象，挂到vue原型上

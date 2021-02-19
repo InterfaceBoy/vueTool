@@ -8,7 +8,11 @@
 <template>
   <div id="app">
     <div class="nva-home">
-      <Menu mode="horizontal" theme="light" active-name="1">
+      <Menu
+        mode="horizontal"
+        theme="light"
+        active-name="1"
+      >
         <MenuItem name="1">
           <Icon type="ios-paper" />
           <router-link to="/html">Html</router-link>
