@@ -3,7 +3,7 @@
         <span
             :class="getCellCls(cell)"
             v-for="cell in cells"
-            @click="handleClick(cell, $event)"
+            @click="handleClick(cell)"
             @mouseenter="handleMouseMove(cell)"
         >
             <em>{{ cell.date.getFullYear() }}</em>

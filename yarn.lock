@@ -5412,7 +5412,7 @@ isstream@~0.1.2:
 
 iview@^4.0.0-rc.4:
   version "3.5.5-rc.1"
-  resolved "https://registry.npm.taobao.org/iview/download/iview-3.5.5-rc.1.tgz?cache=0&sync_timestamp=1594968578348&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fiview%2Fdownload%2Fiview-3.5.5-rc.1.tgz#dc2bffcf3f0b811d443438bc81984be3202a6df0"
+  resolved "https://registry.npm.taobao.org/iview/download/iview-3.5.5-rc.1.tgz#dc2bffcf3f0b811d443438bc81984be3202a6df0"
   integrity sha1-3Cv/zz8LgR1ENDi8gZhL4yAqbfA=
   dependencies:
     async-validator "^1.12.2"
