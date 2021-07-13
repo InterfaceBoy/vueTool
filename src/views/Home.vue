@@ -2,12 +2,17 @@
  * @Author: 何元鹏
  * @Date: 2019-09-04 13:51:08
  * @LastEditors: 何元鹏
- * @LastEditTime: 2020-12-29 17:32:06
+ * @LastEditTime: 2021-04-16 08:33:22
  * @Description: 首页
  -->
 <template>
-  <div class="home">
-    <div class="home-header container mx-auto px-4">天行健，君子当自强不息</div>
+  <div class="home" ref="printTemp">
+    <div class="home-header container mx-auto px-4">
+      天行健，君子当自强不息
+      <div>
+        <button @click="handleContainer">导出开始</button>
+      </div>
+    </div>
     <div class="home-center">
       <div class="implement">
         <router-link to="/vue">GO</router-link>
@@ -21,7 +26,11 @@
 </template>
 
 <script>
+import home from "./home.js";
+import JSZip from "jszip";
+import FileSaver from "file-saver";
 export default {
+  mixins: [home],
   data() {
     return {};
   },
@@ -33,9 +42,54 @@ export default {
       },
       false
     );
+    let bi = {
+      name: 1,
+    };
+    let person = Object.create(bi);
+    person.age = 2;
+    console.log(person);
+    console.log(person.name);
+    console.log(Object.getPrototypeOf(person) === bi);
   },
   beforeDestroy() {},
-  methods: {},
+  methods: {
+    handleContainer() {
+      const zip = new JSZip();
+      const promises = [];
+      for (let index = 0; index < 5; index++) {
+        const p = this.getPdf(this.$refs.printTemp, `测试数据${index}`);
+        promises.push(p);
+      }
+
+      Promise.all(promises)
+        .then(async (pdfs) => {
+          for (let i = 0; i < pdfs.length; i++) {
+            const { PDF, name } = pdfs[i];
+            // 如果只是导出一个pdf，则导出pdf格式
+            if (pdfs.length === 1) {
+              PDF.save(`${name}-${new Date().getTime()}.pdf`);
+              this.allLoading = false;
+              this.loadingText = "正在请求数据";
+            } else {
+              // 否则添加到压缩包里面
+              await zip.file(
+                `${name}-${new Date().getTime()}.pdf`,
+                PDF.output("blob")
+              );
+            }
+          }
+          if (pdfs.length > 1) {
+            zip.generateAsync({ type: "blob" }).then((content) => {
+              FileSaver.saveAs(content, "测试.zip");
+            });
+          }
+        })
+        .finally(() => {
+          this.allLoading = false;
+          this.loadingText = "正在请求数据";
+        });
+    },
+  },
   updated() {},
 };
 </script>
