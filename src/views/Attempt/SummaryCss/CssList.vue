@@ -2,7 +2,7 @@
  * @Author: 何元鹏
  * @Date: 2019-09-18 11:31:57
  * @LastEditors: 何元鹏
- * @LastEditTime: 2019-09-19 11:28:19
+ * @LastEditTime: 2021-07-14 11:20:44
  * @Description: file content
  -->
 <template>
@@ -17,6 +17,12 @@
       </li>
       <li></li>
     </ul>
+    <iframe
+      width="100%"
+      height="100%"
+      src="http://localhost:9096/#/YZT/OneMap/DistMap"
+      id="iframe"
+    ></iframe>
     <router-view class="css-style" />
   </div>
 </template>
@@ -28,11 +34,21 @@ export default {
     return {};
   },
   computed: {},
-  created() {},
+  created() {
+    const iFrame = document.getElementById("iframe");
+
+    // iframe加载完毕后再发送消息，否则子页面接收不到message
+
+    iFrame.onload = function () {
+      // iframe加载完立即发送一条消息
+      iFrame.contentWindow.postMessage({ msg: "MessageFromIndexPage" }, "*");
+    };
+    window.parent.postMessage("子页面发送的消息", "*");
+  },
   mounted() {},
   watch: {},
   methods: {},
-  components: {}
+  components: {},
 };
 </script>
 

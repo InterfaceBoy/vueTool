@@ -2,12 +2,18 @@
  * @Autor: 何元鹏
  * @Date: 2020-04-16 15:55:15
  * @LastEditors: 何元鹏
- * @LastEditTime: 2020-04-16 16:02:58
+ * @LastEditTime: 2021-07-21 10:00:04
  * @Author: 何元鹏
  * @Description: file content
  -->
 <template>
-  <Table row-key="id" :load-data="handleLoadData" :columns="columns16" :data="data13" border></Table>
+  <Table
+    row-key="id"
+    :load-data="handleLoadData"
+    :columns="columns16"
+    :data="data13"
+    border
+  ></Table>
 </template>
 <script>
 export default {
@@ -17,16 +23,16 @@ export default {
         {
           title: "产业园区名称",
           key: "name",
-          tree: true
+          tree: true,
         },
         {
           title: "土地供应",
-          key: "age"
+          key: "age",
         },
         {
           title: "土地征收",
-          key: "address"
-        }
+          key: "address",
+        },
       ],
       data13: [
         {
@@ -35,9 +41,9 @@ export default {
           age: 24,
           address: "London No. 1 Lake Park",
           _loading: false,
-          children: []
-        }
-      ]
+          children: [],
+        },
+      ],
     };
   },
   methods: {
@@ -66,14 +72,14 @@ export default {
           age: 18,
           address: "New York No. 1 Lake Park",
           _loading: false,
-          children: []
-        }
+          children: [],
+        },
       ];
       console.log(s);
 
       callback(s.children);
-    }
-  }
+    },
+  },
 };
 </script>
 
