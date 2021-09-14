@@ -2,7 +2,7 @@
  * @Author: 何元鹏
  * @Date: 2019-09-04 13:51:08
  * @LastEditors: 何元鹏
- * @LastEditTime: 2021-08-10 15:35:57
+ * @LastEditTime: 2021-09-13 17:08:26
  * @Description: 首页
  -->
 <template>
@@ -39,25 +39,28 @@ export default {
     return {};
   },
   mounted() {
-    window.addEventListener(
-      "message",
-      function (event) {
-        console.log(event.data);
-      },
-      false
-    );
-    let bi = {
-      name: 1,
-    };
-    let person = Object.create(bi);
-    person.age = 2;
-    console.log(person);
-    console.log(person.name);
-    console.log(Object.getPrototypeOf(person) === bi);
+    // let bi = {
+    //   name: 1,
+    // };
+    // let person = Object.create(bi);
+    // person.age = 2;
+    // console.log(person);
+    // console.log(person.name);
+    // console.log(Object.getPrototypeOf(person) === bi);
   },
   beforeDestroy() {},
   methods: {
     handleContainer() {
+      console.log(123);
+      window.addEventListener(
+        "message",
+        function (event) {
+          console.log(event.data);
+        },
+        false
+      );
+    },
+    /*  handleContainer() {
       const zip = new JSZip();
       const promises = [];
       for (let index = 0; index < 5; index++) {
@@ -92,7 +95,7 @@ export default {
           this.allLoading = false;
           this.loadingText = "正在请求数据";
         });
-    },
+    }, */
   },
   updated() {},
 };
